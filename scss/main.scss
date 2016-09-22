@@ -1,3 +1,8 @@
+$sec-color: #DCDDDC;
+$pri-color: #909090;
+
+
+
 @import "./imports/_normalize.scss";
 
 *{ box-sizing: border-box }
@@ -7,5 +12,164 @@ img {
 }
 
 #app-container{
-   max-width: 960px;
+
+   background: #69A77C;
+
+}
+
+.nav-container{
+   padding: 0;
+   margin: 0;
+   & .mobile-header{
+      margin: 0;
+   }
+}
+.main-nav{
+   width: 100%;
+   margin: 0;
+
+}
+
+.mobile-header{
+   margin: 0;
+}
+.nav-logo{
+   display: none;
+}
+.header-custom{
+   position: relative;
+   background: none;
+   border: none;
+
+
+}
+
+.mobile-nav{
+   margin: 0 auto;
+   border-radius: 0;
+   float: none;
+   right: initial;
+   top: 0;
+   left: 10px;
+   bottom: initial;
+   background: black;
+}
+
+
+.about-button{
+   position: absolute;
+   right: 50%;
+   top:  20%;
+   transform: translate(50%, 50%);
+   font-size: 10px;
+   border-radius: 0;
+   background: none;
+   color: transparentize($sec-color, .7);
+
+
+}
+
+
+
+
+   .about-info{
+      text-align: center;
+      padding: 10px 50px;
+       width: 100%;
+      background: white;
+
+      h1{
+         font-family: serif;
+         font-size: 20px;
+      }
+      p{
+         color: #838383;
+         font-size: 10px;
+
+      }
+
+
+
+
+   }
+   .grants{
+      background: none;
+   }
+   .profile-column{
+      padding-top: 10px;
+      .pro-thumb{
+         width: 60%;
+         margin: 0 auto;
+         padding: 0;
+         text-align: center;
+
+         .caption{
+            h3{font-size: 12px; margin-top: 5px; margin-bottom: 2px;}
+            p{font-size: 10px; margin-bottom: 2px;}
+            .usr-name{color:#67DB7C;}
+         }
+
+
+
+
+      }
+
+
+   }
+
+.work-col{
+   border: none;
+   width: 100%;
+
+   .current-work{
+      position: relative;
+      border-radius: 6px;
+      padding: 0;
+      border: none;
+      text-align: center;
+      h3{
+         font-size: 12px;
+         color: $pri-color;
+      }
+      p{
+         font-size: 10px;
+         color: $sec-color;
+      }
+      .view{
+         position: absolute;
+         right: 20px;
+         bottom: 30px;
+         color: $pri-color;
+         span{display: none;}
+      }
+
+   }
+}
+.team-hero{
+   background: url('../images/assets/solrod-drawingboard-background.jpg')center,center, no-repeat;
+   background-size: cover;
+   text-align: center;
+   margin-bottom: 0;
+   .hero-btn{
+      width: 95%;
+
+      border: none;
+      font-size: 10px;
+      background: #6A819E;
+      color: $sec-color;
+
+   }
+
+
+
+}
+.social-footer{
+   width: 100%;
+   display: inline-block;
+   background: #fff;
+   svg{
+      padding: 10px 5px;
+      width: 10%;
+   }
+
 }
