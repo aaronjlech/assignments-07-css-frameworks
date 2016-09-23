@@ -5,6 +5,12 @@ $pri-color: #909090;
 
 @import "./imports/_normalize.scss";
 
+@mixin media-query($screen-size){
+   @media screen and (min-width: $screen-size){
+      @content;
+   }
+}
+
 *{ box-sizing: border-box }
 img {
    width: 100%;
@@ -20,13 +26,18 @@ img {
 .nav-container{
    padding: 0;
    margin: 0;
+   width: 100%;
    & .mobile-header{
       margin: 0;
+      @include media-query(768px){
+         display: none;
+      }
    }
 }
 .main-nav{
    width: 100%;
    margin: 0;
+   font-size: 8px;
 
 }
 
@@ -35,11 +46,28 @@ img {
 }
 .nav-logo{
    display: none;
+   @include media-query(768px){
+      float: left;
+      display: inline-block;
+      max-width: 20px;
+      width: 20%;
+      padding-top: 10px;
+
+   }
+
+
+
 }
 .header-custom{
    position: relative;
    background: none;
    border: none;
+   @include media-query(768px){
+      background: black;
+      li a{
+         font-size: 10px;
+      }
+   }
 
 
 }
@@ -56,16 +84,40 @@ img {
 }
 
 
-.about-button{
-   position: absolute;
-   right: 50%;
-   top:  20%;
-   transform: translate(50%, 50%);
+.about-btn{
+
+   border: 2px solid transparentize($sec-color, .7);
    font-size: 10px;
+   font-weight: bold;
    border-radius: 0;
    background: none;
    color: transparentize($sec-color, .7);
 
+
+
+
+}
+.mbl-about{
+   position: absolute;
+   right: 50%;
+   top:  20%;
+   transform: translate(50%, 50%);
+
+
+   @include media-query(768px){
+      display: none;
+   }
+}
+.dsk-about{
+   display: none;
+   width: 30%;
+   text-align: center;
+   margin: 0 auto 40px auto;
+
+   @include media-query(768px){
+      display: block;
+
+   }
 
 }
 
@@ -74,9 +126,20 @@ img {
 
    .about-info{
       text-align: center;
+      margin: 0 auto 20px auto;
       padding: 10px 50px;
-       width: 100%;
+      width: 100%;
       background: white;
+      @include media-query(768px){
+         max-width: 720px;
+
+      }
+      @include media-query(1024px){
+         max-width: 970px;
+         p{padding: 0px 100px;}
+
+      }
+
 
       h1{
          font-family: serif;
@@ -94,6 +157,7 @@ img {
    }
    .grants{
       background: none;
+
    }
    .profile-column{
       padding-top: 10px;
@@ -119,7 +183,6 @@ img {
 
 .work-col{
    border: none;
-   width: 100%;
 
    .current-work{
       position: relative;
@@ -141,9 +204,44 @@ img {
          bottom: 30px;
          color: $pri-color;
          span{display: none;}
+         @include media-query(768px){
+            span{
+               padding-right: 2px;
+               font-size: 10px;
+               display: initial;
+            }
+         }
       }
 
    }
+}
+.myt-bckgrnd{
+   display: none;
+   background: url('../images/assets/solrod-team-background.jpg')center,center,no-repeat;
+   background-size: cover;
+   height: 50vh;
+   width: 100%;
+   margin: 40px 0;
+   z-index: 1;
+
+
+   @include media-query(768px){
+   display: block;
+   position: relative;
+
+
+   }
+.mighty{
+   width: 30%;
+   position: absolute;
+   bottom: 50%;
+   right: 50%;
+   transform: translate(50%, 50%);
+   z-index: 2;
+
+
+
+}
 }
 .team-hero{
    background: url('../images/assets/solrod-drawingboard-background.jpg')center,center, no-repeat;
@@ -152,11 +250,14 @@ img {
    margin-bottom: 0;
    .hero-btn{
       width: 95%;
-
+      border-radius: 2px;
       border: none;
       font-size: 10px;
       background: #6A819E;
       color: $sec-color;
+      @include media-query(768px){
+         width: 20%;
+      }
 
    }
 
@@ -170,6 +271,10 @@ img {
    svg{
       padding: 10px 5px;
       width: 10%;
+      @include media-query(768px){
+         float: right;
+         width: 3%;
+      }
    }
 
 }
