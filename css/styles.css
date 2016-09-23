@@ -471,6 +471,11 @@ img {
 
 .grants {
   background: none; }
+  @media screen and (min-width: 768px) {
+    .grants {
+      color: #DCDDDC; }
+      .grants p {
+        color: #DCDDDC; } }
 
 .profile-column {
   padding-top: 10px; }
@@ -540,6 +545,7 @@ img {
   background: url("../images/assets/solrod-drawingboard-background.jpg") center, center, no-repeat;
   background-size: cover;
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 0; }
   .team-hero .hero-btn {
     width: 95%;

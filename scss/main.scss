@@ -19,6 +19,7 @@ img {
 
 #app-container{
 
+
    background: #69A77C;
 
 }
@@ -157,6 +158,10 @@ img {
    }
    .grants{
       background: none;
+      @include media-query(768px){
+      color: $sec-color;
+      p{color: $sec-color;}
+   }
 
    }
    .profile-column{
@@ -247,6 +252,7 @@ img {
    background: url('../images/assets/solrod-drawingboard-background.jpg')center,center, no-repeat;
    background-size: cover;
    text-align: center;
+   margin-top: 30px;
    margin-bottom: 0;
    .hero-btn{
       width: 95%;
